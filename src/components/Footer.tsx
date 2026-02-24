@@ -1,5 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import { IoCall, IoMail, IoLocation, IoLogoInstagram, IoLogoFacebook, IoCard, IoCheckmarkCircle } from "react-icons/io5"
+import { FaTelegram } from "react-icons/fa"
 
 export const Footer: React.FC = () => {
   return (
@@ -22,18 +24,18 @@ export const Footer: React.FC = () => {
                 href="tel:+998900000000"
                 className="flex items-center gap-2 text-gray-400 hover:text-amber-400 transition"
               >
-                <span>📞</span>
+                <IoCall className="w-4 h-4" />
                 <span>+998 90 000 00 00</span>
               </a>
               <a
                 href="mailto:info@sofmebel.uz"
                 className="flex items-center gap-2 text-gray-400 hover:text-amber-400 transition"
               >
-                <span>📧</span>
+                <IoMail className="w-4 h-4" />
                 <span>info@sofmebel.uz</span>
               </a>
               <div className="flex items-center gap-2 text-gray-400">
-                <span>📍</span>
+                <IoLocation className="w-4 h-4" />
                 <span>Tashkent, Uzbekistan</span>
               </div>
             </div>
@@ -128,33 +130,33 @@ export const Footer: React.FC = () => {
               <div className="flex gap-3">
                 <a
                   href="#instagram"
-                  className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-amber-400 hover:bg-amber-400 hover:text-slate-900 transition text-lg"
+                  className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-amber-400 hover:bg-amber-400 hover:text-slate-900 transition"
                 >
-                  📷
+                  <IoLogoInstagram className="w-5 h-5" />
                 </a>
                 <a
                   href="#facebook"
-                  className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-amber-400 hover:bg-amber-400 hover:text-slate-900 transition text-lg"
+                  className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-amber-400 hover:bg-amber-400 hover:text-slate-900 transition"
                 >
-                  👍
+                  <IoLogoFacebook className="w-5 h-5" />
                 </a>
                 <a
                   href="#telegram"
-                  className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-amber-400 hover:bg-amber-400 hover:text-slate-900 transition text-lg"
+                  className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-amber-400 hover:bg-amber-400 hover:text-slate-900 transition"
                 >
-                  ✈️
+                  <FaTelegram className="w-5 h-5" />
                 </a>
               </div>
               <div className="pt-4 border-t border-gray-700">
                 <p className="text-xs text-gray-500 mb-3">Toʻlov usullari</p>
                 <div className="flex gap-2">
-                  <span className="px-2 py-1 bg-gray-800 rounded text-xs text-gray-400">
-                    💳 Card
+                  <span className="px-2 py-1 bg-gray-800 rounded text-xs text-gray-400 flex items-center gap-1">
+                    <IoCard className="w-4 h-4" /> Card
                   </span>
-                  <span className="px-2 py-1 bg-gray-800 rounded text-xs text-gray-400">
+                  <span className="px-2 py-1 bg-gray-800 rounded text-xs text-gray-400 flex items-center gap-1">
                     📱 Mobile
                   </span>
-                  <span className="px-2 py-1 bg-gray-800 rounded text-xs text-gray-400">
+                  <span className="px-2 py-1 bg-gray-800 rounded text-xs text-gray-400 flex items-center gap-1">
                     🏦 Bank
                   </span>
                 </div>
@@ -176,8 +178,8 @@ export const Footer: React.FC = () => {
                 placeholder="Email..."
                 className="flex-1 px-4 py-2 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-amber-400 text-sm"
               />
-              <button className="px-4 py-2 bg-amber-400 text-slate-900 rounded-lg font-bold hover:bg-amber-300 transition">
-                ✓
+              <button className="px-4 py-2 bg-amber-400 text-slate-900 rounded-lg font-bold hover:bg-amber-300 transition flex items-center justify-center">
+                <IoCheckmarkCircle className="w-5 h-5" />
               </button>
             </div>
           </div>

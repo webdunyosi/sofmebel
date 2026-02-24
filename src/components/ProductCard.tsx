@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import type { Product } from "../types/index"
 import { useCart } from "../hooks/useCart"
+import { IoCart, IoCheckmark } from "react-icons/io5"
 
 interface ProductCardProps {
   product: Product
@@ -105,13 +106,21 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               </div>
               <button
                 onClick={handleAddToCart}
-                className={`flex-1 py-2 rounded-lg transition font-bold text-white ${
+                className={`flex-1 py-2 rounded-lg transition font-bold text-white flex items-center justify-center gap-2 ${
                   isAdded
                     ? "bg-green-500 hover:bg-green-600"
                     : "bg-blue-600 hover:bg-blue-700"
                 }`}
               >
-                {isAdded ? "✓ Qo'shildi" : "🛒 Savatchaga"}
+                {isAdded ? (
+                  <>
+                    <IoCheckmark className="w-5 h-5" /> Qo'shildi
+                  </>
+                ) : (
+                  <>
+                    <IoCart className="w-5 h-5" /> Savatchaga
+                  </>
+                )}
               </button>
             </div>
 

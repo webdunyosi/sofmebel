@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import { useCart } from "../hooks/useCart"
+import { IoCall, IoTime, IoLocation, IoLogoInstagram, IoLogoFacebook, IoMenu, IoClose, IoCart } from "react-icons/io5"
 
 export const Header: React.FC = () => {
   const { getTotalItems } = useCart()
@@ -19,15 +20,15 @@ export const Header: React.FC = () => {
                 href="tel:+998900000000"
                 className="flex items-center gap-2 text-gray-700 hover:text-blue-700 transition"
               >
-                <span>📞</span>
+                <IoCall className="w-5 h-5" />
                 <span>+998 00 000 00 00</span>
               </a>
               <div className="flex items-center gap-2 text-gray-700">
-                <span>⏰</span>
+                <IoTime className="w-5 h-5" />
                 <span>10:00 – 21:00, har kuni</span>
               </div>
               <div className="flex items-center gap-2 text-gray-700">
-                <span>📍</span>
+                <IoLocation className="w-5 h-5" />
                 <span>Tashkent, premium showroom</span>
               </div>
             </div>
@@ -40,13 +41,13 @@ export const Header: React.FC = () => {
                   href="#instagram"
                   className="text-gray-600 hover:text-gray-900 transition"
                 >
-                  📷
+                  <IoLogoInstagram className="w-5 h-5" />
                 </a>
                 <a
                   href="#facebook"
                   className="text-gray-600 hover:text-gray-900 transition"
                 >
-                  👍
+                  <IoLogoFacebook className="w-5 h-5" />
                 </a>
               </div>
 
@@ -131,7 +132,7 @@ export const Header: React.FC = () => {
                 href="tel:+998900000000"
                 className="flex items-center gap-2 px-4 py-2 text-white hover:text-amber-300 transition"
               >
-                <span>☎️</span>
+                <IoCall className="w-5 h-5" />
                 <span className="font-medium">
                   {language === "uz" ? "Qo'ng'iroq qilish" : "Позвонить"}
                 </span>
@@ -150,7 +151,7 @@ export const Header: React.FC = () => {
                 to="/cart"
                 className="relative p-2 text-white hover:text-amber-300 transition"
               >
-                <span className="text-2xl">🛒</span>
+                <IoCart className="w-6 h-6" />
                 {getTotalItems() > 0 && (
                   <span className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">
                     {getTotalItems()}
@@ -164,19 +165,11 @@ export const Header: React.FC = () => {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="lg:hidden p-2 text-white"
             >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
+              {mobileMenuOpen ? (
+                <IoClose className="w-6 h-6" />
+              ) : (
+                <IoMenu className="w-6 h-6" />
+              )}
             </button>
           </div>
 

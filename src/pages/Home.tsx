@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { products } from "../data/products"
 import { ProductCard } from "../components/ProductCard"
+import { IoFlash, IoStar, IoPricetag, IoCall } from "react-icons/io5"
 
 export const Home: React.FC = () => {
   const featuredProducts = products.slice(0, 6)
@@ -96,7 +97,7 @@ export const Home: React.FC = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition">
-              <div className="text-5xl mb-4">⚡</div>
+              <IoFlash className="w-12 h-12 text-amber-400 mb-4" />
               <h3 className="font-bold text-2xl text-gray-800 mb-3">
                 Tez yetkazib berish
               </h3>
@@ -106,7 +107,7 @@ export const Home: React.FC = () => {
               </p>
             </div>
             <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition">
-              <div className="text-5xl mb-4">✨</div>
+              <IoStar className="w-12 h-12 text-amber-400 mb-4" />
               <h3 className="font-bold text-2xl text-gray-800 mb-3">
                 Sifatli mahsulot
               </h3>
@@ -116,7 +117,7 @@ export const Home: React.FC = () => {
               </p>
             </div>
             <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition">
-              <div className="text-5xl mb-4">💰</div>
+              <IoPricetag className="w-12 h-12 text-amber-400 mb-4" />
               <h3 className="font-bold text-2xl text-gray-800 mb-3">
                 Mas'uliyatli narxlar
               </h3>
@@ -246,9 +247,9 @@ export const Home: React.FC = () => {
           </p>
           <button
             onClick={() => alert("Showroom: +998 90 000 00 00")}
-            className="px-8 py-3 bg-amber-400 text-blue-900 font-bold rounded-lg hover:bg-amber-300 transition shadow-lg"
+            className="px-8 py-3 bg-amber-400 text-blue-900 font-bold rounded-lg hover:bg-amber-300 transition shadow-lg flex items-center gap-2 mx-auto"
           >
-            ☎️ Qo'ng'iroq qilish
+            <IoCall className="w-5 h-5" /> Qo'ng'iroq qilish
           </button>
         </div>
       </section>

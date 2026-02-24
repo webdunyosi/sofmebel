@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import { products } from "../data/products"
 import { useCart } from "../hooks/useCart"
+import { IoCheckmark } from "react-icons/io5"
 
 export const ProductDetail: React.FC = () => {
   const { id } = useParams()
@@ -142,11 +143,17 @@ export const ProductDetail: React.FC = () => {
               </div>
               <button
                 onClick={handleAddToCart}
-                className={`flex-1 py-3 rounded-lg font-bold transition ${
+                className={`flex-1 py-3 rounded-lg font-bold transition flex items-center justify-center gap-2 ${
                   isAdded ? "bg-green-600 text-white" : "btn-primary"
                 }`}
               >
-                {isAdded ? "✓ Savatchaga qo'shildi" : "Savatchaga qo'sh"}
+                {isAdded ? (
+                  <>
+                    <IoCheckmark className="w-5 h-5" /> Savatchaga qo'shildi
+                  </>
+                ) : (
+                  "Savatchaga qo'sh"
+                )}
               </button>
             </div>
           ) : (
