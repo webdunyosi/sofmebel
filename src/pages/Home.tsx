@@ -40,10 +40,12 @@ export const Home: React.FC = () => {
               </div>
             </div>
             <div className="hidden lg:block">
-              <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
-                <div className="bg-linear-to-br from-amber-300 to-amber-400 rounded-2xl h-96 flex items-center justify-center text-6xl">
-                  🛋️
-                </div>
+              <div className="rounded-3xl overflow-hidden shadow-2xl">
+                <img
+                  src="/header.jpg"
+                  alt="SofMebel Showroom"
+                  className="w-full h-96 object-cover hover:scale-105 transition-transform duration-300"
+                />
               </div>
             </div>
           </div>
@@ -122,6 +124,64 @@ export const Home: React.FC = () => {
                 Bozordagi eng yaxshi qiymat-narx nisbati. Chegirmalar va
                 aksiyalar.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Showroom Gallery */}
+      <section className="py-16 bg-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-3">Bizning Showroom</h2>
+            <p className="text-gray-600 text-lg">
+              Tashkent premium showroomda mebellarni ko'rib chiqing
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition group cursor-pointer">
+              <div className="relative h-64 overflow-hidden">
+                <img
+                  src="/showroom/1.jpg"
+                  alt="Showroom 1"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent flex items-end">
+                  <div className="p-6 text-white">
+                    <h3 className="text-xl font-bold">
+                      Living Room Collection
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition group cursor-pointer">
+              <div className="relative h-64 overflow-hidden">
+                <img
+                  src="/showroom/2.jpg"
+                  alt="Showroom 2"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent flex items-end">
+                  <div className="p-6 text-white">
+                    <h3 className="text-xl font-bold">Bedroom Elegance</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition group cursor-pointer">
+              <div className="relative h-64 overflow-hidden">
+                <img
+                  src="/showroom/3.jpg"
+                  alt="Showroom 3"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent flex items-end">
+                  <div className="p-6 text-white">
+                    <h3 className="text-xl font-bold">Office Solutions</h3>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
