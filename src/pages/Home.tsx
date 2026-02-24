@@ -1,11 +1,96 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import { products } from "../data/products"
 import { ProductCard } from "../components/ProductCard"
-import { IoFlash, IoStar, IoPricetag, IoCall } from "react-icons/io5"
+import {
+  IoFlash,
+  IoStar,
+  IoPricetag,
+  IoCall,
+  IoCheckmark,
+} from "react-icons/io5"
 
 export const Home: React.FC = () => {
   const featuredProducts = products.slice(0, 6)
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  })
+  const [loading, setLoading] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
+
+  // Telegram Bot Configuration (replace with your actual token and chat ID)
+  const TELEGRAM_BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"
+  const TELEGRAM_CHAT_ID = "YOUR_CHAT_ID_HERE"
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = e.target
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }))
+  }
+
+  const sendToTelegram = async (e: React.FormEvent) => {
+    e.preventDefault()
+
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.phone ||
+      !formData.message
+    ) {
+      alert("Barcha maydonlarni to'ldiring")
+      return
+    }
+
+    setLoading(true)
+
+    try {
+      const message = `
+🎉 *Yangi Aloqa Xabari* 🎉
+
+👤 *Ism:* ${formData.name}
+📧 *Email:* ${formData.email}
+📱 *Telefon:* ${formData.phone}
+💬 *Xabar:* ${formData.message}
+
+_SofMebel Website dan yuborildi_
+      `
+
+      const response = await fetch(
+        `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            chat_id: TELEGRAM_CHAT_ID,
+            text: message,
+            parse_mode: "Markdown",
+          }),
+        },
+      )
+
+      if (response.ok) {
+        setSubmitted(true)
+        setFormData({ name: "", email: "", phone: "", message: "" })
+        setTimeout(() => setSubmitted(false), 5000)
+      } else {
+        alert("Xabar yuborishda xato yuz berdi")
+      }
+    } catch (error) {
+      console.error("Telegram xatosi:", error)
+      alert("Xabar yuborishda xato yuz berdi")
+    } finally {
+      setLoading(false)
+    }
+  }
 
   return (
     <div>
@@ -242,47 +327,122 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Newsletter Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-red-700 via-red-800 to-red-900 text-white py-16">
+      <section className="relative overflow-hidden bg-gradient-to-br from-red-700 via-red-800 to-red-900 text-white py-20">
         {/* Animated Background */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-yellow-500/20 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-slide-in-up">
-          <h2 className="text-4xl font-bold mb-4">
-            Yangi mebellar haqida bilish uchun
-          </h2>
-          <p className="text-red-100 mb-8 text-lg">
-            Eng birinchi eksklyuziv taklif va chegirmalarni olib qoling
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3">
-            <input
-              type="email"
-              placeholder="Sizning email..."
-              className="flex-1 px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 backdrop-blur-sm"
-            />
-            <button className="px-8 py-3 bg-gradient-to-r from-yellow-400 to-yellow-500 text-red-900 font-bold rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300 shadow-md whitespace-nowrap">
-              Obuna ol
-            </button>
-          </div>
-        </div>
-      </section>
+        <div
+          className="absolute bottom-0 left-0 w-96 h-96 bg-red-500/20 rounded-full blur-3xl animate-pulse-slow"
+          style={{ animationDelay: "1s" }}
+        ></div>
 
-      {/* CTA Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-16">
-        {/* Animated Background */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-red-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-slide-in-up">
-          <h2 className="text-4xl font-bold mb-4">
-            O'z uyingizni zamonaviy qiling
-          </h2>
-          <p className="text-slate-300 mb-8 text-lg max-w-2xl mx-auto">
-            SofMebel bilan siz eng yaxshi narxda eng sifatli mobilyani topasiz.
-            Bugundan boshlang!
-          </p>
-          <button
-            onClick={() => alert("Showroom: +998 90 000 00 00")}
-            className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-yellow-400 to-yellow-500 text-red-900 font-bold rounded-lg hover:shadow-lg hover:shadow-yellow-400/50 hover:scale-105 transition-all duration-300 shadow-md"
-          >
-            <IoCall className="w-5 h-5" /> Qo'ng'iroq qilish
-          </button>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 animate-slide-in-up">
+          <div className="text-center mb-12">
+            <h2 className="text-5xl font-bold mb-4">Biz bilan bog'lanish</h2>
+            <p className="text-xl text-red-100">
+              Sizning savol va taklif uchun biz shunga tayyormiz
+            </p>
+          </div>
+
+          {/* Contact Form */}
+          {submitted ? (
+            <div className="bg-green-500/20 backdrop-blur-glass border border-green-400/30 rounded-2xl p-8 text-center animate-scale-in">
+              <IoCheckmark className="w-16 h-16 mx-auto mb-4 text-green-400" />
+              <h3 className="text-2xl font-bold mb-2">Rahmat!</h3>
+              <p className="text-green-100">
+                Sizning xabar muvaffaqiyatli yuborildi. Tez orada aloqa qilamiz.
+              </p>
+            </div>
+          ) : (
+            <form
+              onSubmit={sendToTelegram}
+              className="backdrop-blur-glass bg-white/10 border border-white/20 rounded-2xl p-8 shadow-xl"
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                {/* Name Input */}
+                <div className="animate-slide-in-left">
+                  <label className="block text-sm font-bold mb-2">Ism</label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    placeholder="Sizning ismingiz..."
+                    className="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-yellow-400 backdrop-blur-sm transition-all"
+                  />
+                </div>
+
+                {/* Email Input */}
+                <div className="animate-slide-in-right">
+                  <label className="block text-sm font-bold mb-2">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder="sizning@email.com"
+                    className="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-yellow-400 backdrop-blur-sm transition-all"
+                  />
+                </div>
+
+                {/* Phone Input */}
+                <div
+                  className="animate-slide-in-left"
+                  style={{ animationDelay: "0.1s" }}
+                >
+                  <label className="block text-sm font-bold mb-2">
+                    Telefon
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    placeholder="+998 90 000 00 00"
+                    className="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-yellow-400 backdrop-blur-sm transition-all"
+                  />
+                </div>
+
+                {/* Subject Input - optional but using message */}
+                <div
+                  className="animate-slide-in-right"
+                  style={{ animationDelay: "0.1s" }}
+                >
+                  <label className="block text-sm font-bold mb-2">Mavzu</label>
+                  <input
+                    type="text"
+                    placeholder="Xabari mavzusi (ixtiyoriy)"
+                    className="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-yellow-400 backdrop-blur-sm transition-all"
+                  />
+                </div>
+              </div>
+
+              {/* Message Textarea */}
+              <div
+                className="mb-6 animate-slide-in-up"
+                style={{ animationDelay: "0.2s" }}
+              >
+                <label className="block text-sm font-bold mb-2">Xabar</label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  placeholder="Sizning xabaringiz yoki savol..."
+                  rows={5}
+                  className="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-yellow-400 backdrop-blur-sm transition-all resize-none"
+                />
+              </div>
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-red-900 font-bold rounded-lg hover:shadow-lg hover:shadow-yellow-400/50 hover:scale-105 transition-all duration-300 shadow-md disabled:opacity-50 disabled:cursor-not-allowed animate-slide-in-up"
+                style={{ animationDelay: "0.3s" }}
+              >
+                {loading ? "Yuborilmoqda..." : "Xabar yuborish"}
+              </button>
+            </form>
+          )}
         </div>
       </section>
     </div>
