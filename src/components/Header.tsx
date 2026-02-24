@@ -1,7 +1,16 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import { useCart } from "../hooks/useCart"
-import { IoCall, IoTime, IoLocation, IoLogoInstagram, IoLogoFacebook, IoMenu, IoClose, IoCart } from "react-icons/io5"
+import {
+  IoCall,
+  IoTime,
+  IoLocation,
+  IoLogoInstagram,
+  IoLogoFacebook,
+  IoMenu,
+  IoClose,
+  IoCart,
+} from "react-icons/io5"
 
 export const Header: React.FC = () => {
   const { getTotalItems } = useCart()
@@ -18,7 +27,7 @@ export const Header: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center sm:justify-start">
               <a
                 href="tel:+998900000000"
-                className="flex items-center gap-2 text-gray-700 hover:text-blue-700 transition"
+                className="flex items-center gap-2 text-gray-700 hover:text-red-700 transition"
               >
                 <IoCall className="w-5 h-5" />
                 <span>+998 00 000 00 00</span>
@@ -57,8 +66,8 @@ export const Header: React.FC = () => {
                   onClick={() => setLanguage("uz")}
                   className={`px-2 py-1 rounded font-semibold transition ${
                     language === "uz"
-                      ? "bg-blue-700 text-white"
-                      : "text-gray-700 hover:text-blue-700"
+                      ? "bg-red-700 text-white"
+                      : "text-gray-700 hover:text-red-700"
                   }`}
                 >
                   Uz
@@ -67,8 +76,8 @@ export const Header: React.FC = () => {
                   onClick={() => setLanguage("ru")}
                   className={`px-2 py-1 rounded font-semibold transition ${
                     language === "ru"
-                      ? "bg-blue-700 text-white"
-                      : "text-gray-700 hover:text-blue-700"
+                      ? "bg-red-700 text-white"
+                      : "text-gray-700 hover:text-red-700"
                   }`}
                 >
                   Ru
@@ -80,15 +89,16 @@ export const Header: React.FC = () => {
       </div>
 
       {/* Main Navigation */}
-      <nav className="bg-linear-to-r from-blue-700 to-blue-800 sticky top-0 z-50">
+      <nav className="bg-linear-to-r from-red-700 to-red-800 sticky top-0 z-50">
         <div className="max-w-full px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2 group">
-              <div className="text-3xl font-bold text-white">
-                <span className="text-amber-400">Sof</span>
-                <span> Mebel</span>
-              </div>
+              <img
+                src="/logo.png"
+                alt="Sof Mebel Logo"
+                className="h-16 w-auto hover:opacity-80 transition"
+              />
             </Link>
 
             {/* Desktop Menu */}
@@ -139,7 +149,7 @@ export const Header: React.FC = () => {
               </a>
 
               {/* Schedule Button */}
-              <button className="px-6 py-2 bg-amber-400 text-blue-900 rounded-full font-bold hover:bg-amber-300 transition shadow-lg">
+              <button className="px-6 py-2 bg-yellow-400 text-red-900 rounded-full font-bold hover:bg-yellow-300 transition shadow-lg">
                 {language === "uz"
                   ? "Uchrashuvni belgilash"
                   : "Записать встречу"}
@@ -178,35 +188,35 @@ export const Header: React.FC = () => {
             <div className="lg:hidden pb-4 space-y-3">
               <Link
                 to="/"
-                className="block px-4 py-2 text-white hover:bg-blue-600 rounded transition"
+                className="block px-4 py-2 text-white hover:bg-red-600 rounded transition"
               >
                 {language === "uz" ? "Bosh sahifa" : "Главная"}
               </Link>
               <Link
                 to="/products"
-                className="block px-4 py-2 text-white hover:bg-blue-600 rounded transition"
+                className="block px-4 py-2 text-white hover:bg-red-600 rounded transition"
               >
                 {language === "uz" ? "Mebel" : "Мебель"}
               </Link>
               <a
                 href="#accessories"
-                className="block px-4 py-2 text-white hover:bg-blue-600 rounded transition"
+                className="block px-4 py-2 text-white hover:bg-red-600 rounded transition"
               >
                 {language === "uz" ? "Aksessuarlar" : "Аксессуары"}
               </a>
               <a
                 href="#magazine"
-                className="block px-4 py-2 text-white hover:bg-blue-600 rounded transition"
+                className="block px-4 py-2 text-white hover:bg-red-600 rounded transition"
               >
                 {language === "uz" ? "Online Magazin" : "Онлайн Магазин"}
               </a>
               <a
                 href="#about"
-                className="block px-4 py-2 text-white hover:bg-blue-600 rounded transition"
+                className="block px-4 py-2 text-white hover:bg-red-600 rounded transition"
               >
                 {language === "uz" ? "Biz haqimizda" : "О нас"}
               </a>
-              <button className="w-full px-4 py-2 bg-amber-400 text-blue-900 rounded-full font-bold hover:bg-amber-300 transition">
+              <button className="w-full px-4 py-2 bg-yellow-400 text-red-900 rounded-full font-bold hover:bg-yellow-300 transition">
                 {language === "uz"
                   ? "Uchrashuvni belgilash"
                   : "Записать встречу"}

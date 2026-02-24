@@ -79,7 +79,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
         {/* Price */}
         <div className="mb-6">
-          <p className="text-3xl font-bold text-blue-700">${product.price}</p>
+          <p className="text-3xl font-bold text-red-700">${product.price}</p>
           <p className="text-xs text-gray-500 mt-1">Jami narx</p>
         </div>
 
@@ -109,7 +109,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                 className={`flex-1 py-2 rounded-lg transition font-bold text-white flex items-center justify-center gap-2 ${
                   isAdded
                     ? "bg-green-500 hover:bg-green-600"
-                    : "bg-blue-600 hover:bg-blue-700"
+                    : "bg-red-600 hover:bg-red-700"
                 }`}
               >
                 {isAdded ? (
@@ -127,7 +127,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             {/* View Details */}
             <Link
               to={`/product/${product.id}`}
-              className="block w-full text-center py-2 px-4 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition font-semibold"
+              className="block w-full text-center py-2 px-4 border-2 border-red-600 text-red-600 rounded-lg hover:bg-red-50 transition font-semibold"
             >
               Batafsil ko'rish
             </Link>

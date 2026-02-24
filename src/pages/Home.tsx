@@ -10,31 +10,31 @@ export const Home: React.FC = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-linear-to-br from-blue-700 via-blue-800 to-slate-900 text-white py-32">
+      <section className="bg-linear-to-br from-red-700 via-red-800 to-slate-900 text-white py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <span className="inline-block px-4 py-2 bg-amber-400 text-blue-900 rounded-full text-sm font-bold">
+              <span className="inline-block px-4 py-2 bg-yellow-400 text-red-900 rounded-full text-sm font-bold">
                 Eng yaxshi mebel katalogi
               </span>
               <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
                 Sizning uyingizni{" "}
                 <span className="text-amber-400">zamonaviy</span> qiling
               </h1>
-              <p className="text-xl text-blue-100 leading-relaxed">
+              <p className="text-xl text-red-100 leading-relaxed">
                 SofMebel - sifatli, zamonaviy va mas'uliyatli narxdagi
                 mebellarning eng yirik katalogi.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   to="/products"
-                  className="px-8 py-3 bg-amber-400 text-blue-900 font-bold rounded-lg hover:bg-amber-300 transition shadow-lg"
+                  className="px-8 py-3 bg-yellow-400 text-red-900 font-bold rounded-lg hover:bg-yellow-300 transition shadow-lg"
                 >
                   Mebellarni ko'rish →
                 </Link>
                 <button
                   onClick={() => alert("Uchrashuvni belgilash")}
-                  className="px-8 py-3 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-blue-900 transition"
+                  className="px-8 py-3 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-red-900 transition"
                 >
                   Uchrashув belgilash
                 </button>
@@ -72,7 +72,7 @@ export const Home: React.FC = () => {
               </p>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-blue-700">
+              <div className="text-3xl md:text-4xl font-bold text-red-700">
                 24/7
               </div>
               <p className="text-gray-600 text-sm md:text-base">
@@ -80,7 +80,7 @@ export const Home: React.FC = () => {
               </p>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-blue-700">
+              <div className="text-3xl md:text-4xl font-bold text-red-700">
                 100%
               </div>
               <p className="text-gray-600 text-sm md:text-base">Kafolat</p>
@@ -205,7 +205,7 @@ export const Home: React.FC = () => {
           <div className="text-center mt-12">
             <Link
               to="/products"
-              className="px-8 py-3 bg-blue-700 text-white font-bold rounded-lg hover:bg-blue-800 transition shadow-lg"
+              className="px-8 py-3 bg-red-700 text-white font-bold rounded-lg hover:bg-red-800 transition shadow-lg"
             >
               Barcha mebellarni ko'rish
             </Link>
@@ -214,12 +214,12 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Newsletter Section */}
-      <section className="bg-blue-700 text-white py-16">
+      <section className="bg-red-700 text-white py-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold mb-4">
             Yangi mebellar haqida bilish uchun
           </h2>
-          <p className="text-blue-100 mb-8 text-lg">
+          <p className="text-red-100 mb-8 text-lg">
             Eng birinchi eksklyuziv taklif va chegirmalarni olib qoling
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
@@ -228,7 +228,7 @@ export const Home: React.FC = () => {
               placeholder="Sizning email..."
               className="flex-1 px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-amber-400"
             />
-            <button className="px-8 py-3 bg-amber-400 text-blue-900 font-bold rounded-lg hover:bg-amber-300 transition whitespace-nowrap">
+            <button className="px-8 py-3 bg-yellow-400 text-red-900 font-bold rounded-lg hover:bg-yellow-300 transition whitespace-nowrap">
               Obuna ol
             </button>
           </div>
@@ -241,13 +241,13 @@ export const Home: React.FC = () => {
           <h2 className="text-4xl font-bold mb-4">
             O'z uyingizni zamonaviy qiling
           </h2>
-          <p className="text-blue-100 mb-8 text-lg max-w-2xl mx-auto">
+          <p className="text-red-100 mb-8 text-lg max-w-2xl mx-auto">
             SofMebel bilan siz eng yaxshi narxda eng sifatli mobilyani topasiz.
             Bugundan boshlang!
           </p>
           <button
             onClick={() => alert("Showroom: +998 90 000 00 00")}
-            className="px-8 py-3 bg-amber-400 text-blue-900 font-bold rounded-lg hover:bg-amber-300 transition shadow-lg flex items-center gap-2 mx-auto"
+            className="px-8 py-3 bg-yellow-400 text-red-900 font-bold rounded-lg hover:bg-yellow-300 transition shadow-lg flex items-center gap-2 mx-auto"
           >
             <IoCall className="w-5 h-5" /> Qo'ng'iroq qilish
           </button>

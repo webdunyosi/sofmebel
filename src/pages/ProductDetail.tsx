@@ -38,13 +38,13 @@ export const ProductDetail: React.FC = () => {
     <div className="container-custom py-8">
       {/* Breadcrumb */}
       <div className="mb-6 text-gray-600">
-        <button onClick={() => navigate("/")} className="hover:text-blue-600">
+        <button onClick={() => navigate("/")} className="hover:text-red-600">
           Bosh sahifa
         </button>
         {" / "}
         <button
           onClick={() => navigate("/products")}
-          className="hover:text-blue-600"
+          className="hover:text-red-600"
         >
           Mebellar
         </button>
@@ -84,7 +84,7 @@ export const ProductDetail: React.FC = () => {
           </div>
 
           {/* Price */}
-          <div className="text-3xl font-bold text-blue-600 mb-6">
+          <div className="text-3xl font-bold text-red-600 mb-6">
             ${product.price}
           </div>
 
@@ -185,7 +185,7 @@ export const ProductDetail: React.FC = () => {
                 />
                 <div className="p-4">
                   <h3 className="font-bold text-gray-800 mb-2">{p.nameUz}</h3>
-                  <p className="text-blue-600 font-bold">${p.price}</p>
+                  <p className="text-red-600 font-bold">${p.price}</p>
                 </div>
               </div>
             ))}

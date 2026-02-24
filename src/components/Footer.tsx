@@ -1,6 +1,14 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import { IoCall, IoMail, IoLocation, IoLogoInstagram, IoLogoFacebook, IoCard, IoCheckmarkCircle } from "react-icons/io5"
+import {
+  IoCall,
+  IoMail,
+  IoLocation,
+  IoLogoInstagram,
+  IoLogoFacebook,
+  IoCard,
+  IoCheckmarkCircle,
+} from "react-icons/io5"
 import { FaTelegram } from "react-icons/fa"
 
 export const Footer: React.FC = () => {

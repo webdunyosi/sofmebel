@@ -195,7 +195,7 @@ export const Checkout: React.FC = () => {
             <div className="border-t pt-4">
               <div className="flex justify-between text-lg">
                 <span className="font-bold">Jami:</span>
-                <span className="font-bold text-blue-600">
+                <span className="font-bold text-red-600">
                   ${getTotalPrice().toFixed(2)}
                 </span>
               </div>
