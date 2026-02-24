@@ -19,85 +19,118 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   }
 
   return (
-    <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+    <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 group">
       {/* Product Image */}
-      <div className="relative h-48 bg-gray-200 overflow-hidden">
+      <div className="relative h-56 bg-linear-to-br from-gray-100 to-gray-200 overflow-hidden">
         <img
           src={product.image}
           alt={product.name}
-          className="w-full h-full object-cover hover:scale-105 transition"
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
         />
         {!product.inStock && (
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-            <span className="text-white font-bold">Sotuvda yo'q</span>
+            <span className="text-white font-bold text-lg">Sotuvda yo'q</span>
+          </div>
+        )}
+        {product.inStock && (
+          <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">
+            Sotuvda
           </div>
         )}
       </div>
 
       {/* Product Info */}
-      <div className="p-4">
-        <h3 className="font-bold text-lg text-gray-800 mb-2">
+      <div className="p-6">
+        <h3 className="font-bold text-xl text-gray-800 mb-2 line-clamp-2">
           {product.nameUz}
         </h3>
-        <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+        <p className="text-gray-600 text-sm mb-4 line-clamp-2 h-10">
           {product.descriptionUz}
         </p>
 
         {/* Rating */}
-        <div className="flex items-center gap-2 mb-3">
-          <div className="flex text-yellow-400">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="flex text-amber-400">
             {[...Array(5)].map((_, i) => (
-              <span key={i}>{i < Math.round(product.rating) ? "★" : "☆"}</span>
+              <span key={i} className="text-lg">
+                {i < Math.round(product.rating) ? "★" : "☆"}
+              </span>
             ))}
           </div>
-          <span className="text-sm text-gray-600">({product.reviews})</span>
+          <span className="text-xs text-gray-600 font-medium">
+            {product.rating} ({product.reviews})
+          </span>
+        </div>
+
+        {/* Specs */}
+        <div className="flex gap-2 mb-4 text-xs">
+          {product.color && (
+            <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full">
+              {product.color}
+            </span>
+          )}
+          {product.material && (
+            <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full">
+              {product.material}
+            </span>
+          )}
         </div>
 
         {/* Price */}
-        <div className="mb-4">
-          <p className="text-2xl font-bold text-blue-600">${product.price}</p>
-          {product.color && (
-            <p className="text-sm text-gray-600">Rang: {product.color}</p>
-          )}
+        <div className="mb-6">
+          <p className="text-3xl font-bold text-blue-700">${product.price}</p>
+          <p className="text-xs text-gray-500 mt-1">Jami narx</p>
         </div>
 
         {/* Add to Cart */}
         {product.inStock ? (
-          <div className="flex gap-2">
-            <input
-              type="number"
-              min="1"
-              value={quantity}
-              onChange={(e) => setQuantity(parseInt(e.target.value) || 1)}
-              className="w-16 px-2 py-2 border border-gray-300 rounded"
-            />
-            <button
-              onClick={handleAddToCart}
-              className={`flex-1 py-2 rounded transition font-bold ${
-                isAdded
-                  ? "bg-green-600 text-white"
-                  : "bg-blue-600 text-white hover:bg-blue-700"
-              }`}
+          <div className="space-y-3">
+            <div className="flex gap-2">
+              <div className="flex items-center border border-gray-300 rounded-lg">
+                <button
+                  onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                  className="px-3 py-2 text-gray-600 hover:bg-gray-100"
+                >
+                  −
+                </button>
+                <span className="px-4 py-2 border-l border-r border-gray-300">
+                  {quantity}
+                </span>
+                <button
+                  onClick={() => setQuantity(quantity + 1)}
+                  className="px-3 py-2 text-gray-600 hover:bg-gray-100"
+                >
+                  +
+                </button>
+              </div>
+              <button
+                onClick={handleAddToCart}
+                className={`flex-1 py-2 rounded-lg transition font-bold text-white ${
+                  isAdded
+                    ? "bg-green-500 hover:bg-green-600"
+                    : "bg-blue-600 hover:bg-blue-700"
+                }`}
+              >
+                {isAdded ? "✓ Qo'shildi" : "🛒 Savatchaga"}
+              </button>
+            </div>
+
+            {/* View Details */}
+            <Link
+              to={`/product/${product.id}`}
+              className="block w-full text-center py-2 px-4 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition font-semibold"
             >
-              {isAdded ? "✓ Qo'shildi" : "Savatchaga qo'sh"}
-            </button>
+              Batafsil ko'rish
+            </Link>
           </div>
         ) : (
           <button
             disabled
-            className="w-full py-2 bg-gray-400 text-white rounded cursor-not-allowed"
+            className="w-full py-3 bg-gray-400 text-white rounded-lg cursor-not-allowed font-semibold"
           >
             Sotuvda yo'q
           </button>
         )}
-
-        {/* View Details */}
-        <Link
-          to={`/product/${product.id}`}
-          className="block mt-2 text-center text-blue-600 hover:underline text-sm"
-        >
-          Batafsil ma'lumot
-        </Link>
       </div>
     </div>
   )
