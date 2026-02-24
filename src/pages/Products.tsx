@@ -19,11 +19,13 @@ export const Products: React.FC = () => {
   })
 
   return (
-    <div className="container-custom py-8">
-      <h1 className="text-4xl font-bold mb-8">Bizning mebellar to'plami</h1>
+    <div className="container-custom py-8 animate-fade-in">
+      <h1 className="text-4xl font-bold mb-8 gradient-text animate-slide-in-up">
+        Bizning mebellar to'plami
+      </h1>
 
       {/* Filters */}
-      <div className="bg-gray-50 p-6 rounded-lg mb-8">
+      <div className="backdrop-blur-glass bg-white/40 p-6 rounded-lg mb-8 shadow-lg border border-white/20 animate-slide-in-down">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Search */}
           <div>
@@ -35,7 +37,7 @@ export const Products: React.FC = () => {
               placeholder="Mebel qidiring..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 transition-all"
             />
           </div>
 
@@ -47,7 +49,7 @@ export const Products: React.FC = () => {
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 transition-all"
             >
               <option value="">Barcha kategoriyalar</option>
               {categories.map((cat) => (
@@ -61,17 +63,25 @@ export const Products: React.FC = () => {
       </div>
 
       {/* Results Count */}
-      <p className="text-gray-600 mb-6">{filtered.length} ta mebel topildi</p>
+      <p className="text-gray-600 mb-6 animate-slide-in-up">
+        {filtered.length} ta mebel topildi
+      </p>
 
       {/* Products Grid */}
       {filtered.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filtered.map((product) => (
-            <ProductCard key={product.id} product={product} />
+          {filtered.map((product, index) => (
+            <div
+              key={product.id}
+              style={{ animationDelay: `${index * 0.05}s` }}
+              className="animate-scale-in"
+            >
+              <ProductCard product={product} />
+            </div>
           ))}
         </div>
       ) : (
-        <div className="text-center py-12">
+        <div className="text-center py-12 animate-fade-in">
           <p className="text-gray-600 text-lg">
             Sizning qidiruvingizga mos mebellar topilmadi. Iltimos, boshqa
             qidiruv parametrlarini sinab ko'ring.

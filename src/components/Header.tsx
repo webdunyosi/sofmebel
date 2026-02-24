@@ -20,7 +20,7 @@ export const Header: React.FC = () => {
   return (
     <header>
       {/* Top Info Bar */}
-      <div className="bg-amber-50 border-b border-amber-200">
+      <div className="backdrop-blur-glass bg-gradient-to-r from-yellow-50 to-red-50 border-b border-red-200 animate-fade-in">
         <div className="max-w-full px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row justify-between items-center py-3 gap-4 text-sm">
             {/* Left Info */}
@@ -89,7 +89,7 @@ export const Header: React.FC = () => {
       </div>
 
       {/* Main Navigation */}
-      <nav className="bg-linear-to-r from-red-700 to-red-800 sticky top-0 z-50">
+      <nav className="sticky top-0 z-50 bg-gradient-to-r from-red-700 via-red-800 to-red-900 backdrop-blur-md shadow-lg animate-slide-in-down">
         <div className="max-w-full px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
@@ -149,7 +149,7 @@ export const Header: React.FC = () => {
               </a>
 
               {/* Schedule Button */}
-              <button className="px-6 py-2 bg-yellow-400 text-red-900 rounded-full font-bold hover:bg-yellow-300 transition shadow-lg">
+              <button className="px-6 py-2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-red-900 rounded-full font-bold hover:shadow-lg hover:scale-105 transition-all duration-300 shadow-md">
                 {language === "uz"
                   ? "Uchrashuvni belgilash"
                   : "Записать встречу"}
@@ -185,7 +185,7 @@ export const Header: React.FC = () => {
 
           {/* Mobile Menu */}
           {mobileMenuOpen && (
-            <div className="lg:hidden pb-4 space-y-3">
+            <div className="lg:hidden pb-4 space-y-3 backdrop-blur-glass-dark bg-red-700/80 rounded-lg animate-slide-in-down border border-red-600/20">
               <Link
                 to="/"
                 className="block px-4 py-2 text-white hover:bg-red-600 rounded transition"
@@ -216,7 +216,7 @@ export const Header: React.FC = () => {
               >
                 {language === "uz" ? "Biz haqimizda" : "О нас"}
               </a>
-              <button className="w-full px-4 py-2 bg-yellow-400 text-red-900 rounded-full font-bold hover:bg-yellow-300 transition">
+              <button className="w-full px-4 py-2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-red-900 rounded-full font-bold hover:shadow-lg hover:scale-105 transition-all duration-300 shadow-md">
                 {language === "uz"
                   ? "Uchrashuvni belgilash"
                   : "Записать встречу"}

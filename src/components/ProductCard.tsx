@@ -20,13 +20,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   }
 
   return (
-    <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 group">
+    <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 group transform hover:scale-105 hover:-translate-y-2 animate-scale-in">
       {/* Product Image */}
-      <div className="relative h-56 bg-linear-to-br from-gray-100 to-gray-200 overflow-hidden">
+      <div className="relative h-56 bg-gradient-to-br from-gray-100 via-gray-150 to-gray-200 overflow-hidden">
         <img
           src={product.image}
           alt={product.name}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+          className="w-full h-full object-cover group-hover:scale-125 transition-transform duration-500"
         />
         {!product.inStock && (
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
@@ -34,7 +34,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           </div>
         )}
         {product.inStock && (
-          <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">
+          <div className="absolute top-4 right-4 bg-gradient-to-r from-green-400 to-green-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg animate-pulse-slow">
             Sotuvda
           </div>
         )}
@@ -106,10 +106,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               </div>
               <button
                 onClick={handleAddToCart}
-                className={`flex-1 py-2 rounded-lg transition font-bold text-white flex items-center justify-center gap-2 ${
+                className={`flex-1 py-2 rounded-lg transition-all duration-300 font-bold text-white flex items-center justify-center gap-2 shadow-md hover:shadow-lg hover:scale-105 ${
                   isAdded
-                    ? "bg-green-500 hover:bg-green-600"
-                    : "bg-red-600 hover:bg-red-700"
+                    ? "bg-gradient-to-r from-green-400 to-green-500 hover:from-green-500 hover:to-green-600"
+                    : "bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800"
                 }`}
               >
                 {isAdded ? (
@@ -127,7 +127,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             {/* View Details */}
             <Link
               to={`/product/${product.id}`}
-              className="block w-full text-center py-2 px-4 border-2 border-red-600 text-red-600 rounded-lg hover:bg-red-50 transition font-semibold"
+              className="block w-full text-center py-2 px-4 border-2 border-red-600 text-red-600 rounded-lg hover:bg-gradient-to-r hover:from-red-600 hover:to-red-700 hover:text-white transition-all duration-300 font-semibold hover:shadow-lg hover:scale-105"
             >
               Batafsil ko'rish
             </Link>

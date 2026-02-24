@@ -13,9 +13,16 @@ import { FaTelegram } from "react-icons/fa"
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-slate-900 text-gray-300 mt-20">
+    <footer className="bg-gradient-to-br from-slate-900 via-red-900/20 to-slate-900 text-gray-300 mt-20 relative overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="absolute top-0 right-0 w-72 h-72 bg-red-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
+      <div
+        className="absolute bottom-0 left-0 w-72 h-72 bg-yellow-500/5 rounded-full blur-3xl animate-pulse-slow"
+        style={{ animationDelay: "1s" }}
+      ></div>
+
       {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
@@ -203,17 +210,17 @@ export const Footer: React.FC = () => {
       </div>
 
       {/* Bottom Footer */}
-      <div className="border-t border-gray-800 bg-slate-950 py-6">
+      <div className="relative z-10 border-t border-gray-800 bg-slate-950/80 backdrop-blur-sm py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
           <p>&copy; 2024 SofMebel. Barcha huquqlar himoyalangan.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#privacy" className="hover:text-amber-400 transition">
+            <a href="#privacy" className="hover:text-yellow-400 transition">
               Maxfiylik siyosati
             </a>
-            <a href="#terms" className="hover:text-amber-400 transition">
+            <a href="#terms" className="hover:text-yellow-400 transition">
               Shartlar
             </a>
-            <a href="#cookies" className="hover:text-amber-400 transition">
+            <a href="#cookies" className="hover:text-yellow-400 transition">
               Cookies
             </a>
           </div>
