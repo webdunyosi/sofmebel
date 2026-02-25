@@ -115,12 +115,7 @@ export const Header: React.FC = () => {
               >
                 {language === "uz" ? "Mebel" : "Мебель"}
               </Link>
-              <a
-                href="#accessories"
-                className="text-white hover:text-amber-300 transition font-medium"
-              >
-                {language === "uz" ? "Aksessuarlar" : "Аксессуары"}
-              </a>
+              {/* Accessories link removed per request */}
               <a
                 href="#magazine"
                 className="text-white hover:text-amber-300 transition font-medium"
@@ -198,12 +193,7 @@ export const Header: React.FC = () => {
               >
                 {language === "uz" ? "Mebel" : "Мебель"}
               </Link>
-              <a
-                href="#accessories"
-                className="block px-4 py-2 text-white hover:bg-red-600 rounded transition"
-              >
-                {language === "uz" ? "Aksessuarlar" : "Аксессуары"}
-              </a>
+              {/* Accessories link removed from mobile menu */}
               <a
                 href="#magazine"
                 className="block px-4 py-2 text-white hover:bg-red-600 rounded transition"
