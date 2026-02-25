@@ -24,7 +24,9 @@ export const CartItemComponent: React.FC<CartItemComponentProps> = ({
 
         {/* Product Details */}
         <div className="flex-1 min-w-0">
-          <h3 className="font-bold text-gray-800 text-xs sm:text-sm truncate">{item.product.nameUz}</h3>
+          <h3 className="font-bold text-gray-800 text-xs sm:text-sm truncate">
+            {item.product.nameUz}
+          </h3>
           <p className="text-red-600 font-semibold text-xs">
             ${item.product.price}
           </p>
@@ -48,7 +50,9 @@ export const CartItemComponent: React.FC<CartItemComponentProps> = ({
           >
             −
           </button>
-          <span className="w-5 sm:w-7 text-center text-xs sm:text-sm font-semibold">{item.quantity}</span>
+          <span className="w-5 sm:w-7 text-center text-xs sm:text-sm font-semibold">
+            {item.quantity}
+          </span>
           <button
             onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
             className="px-1.5 py-0.5 text-xs sm:text-sm bg-white rounded hover:bg-gray-200 transition-colors duration-200 font-bold"

@@ -49,7 +49,9 @@ export const Cart: React.FC = () => {
 
         {/* Cart Summary */}
         <div className="backdrop-blur-glass bg-white/40 p-3 sm:p-5 rounded-lg h-fit shadow-sm border border-white/20 animate-slide-in-right">
-          <h2 className="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">Jami hisob</h2>
+          <h2 className="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">
+            Jami hisob
+          </h2>
 
           <div className="space-y-1 sm:space-y-3 mb-3 sm:mb-5">
             <div className="flex justify-between text-xs sm:text-sm">
