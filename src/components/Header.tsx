@@ -85,16 +85,31 @@ export const Header: React.FC = () => {
             </div>
 
             {/* Mobile Menu Button */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 text-white"
-            >
-              {mobileMenuOpen ? (
-                <IoClose className="w-6 h-6" />
-              ) : (
-                <IoMenu className="w-6 h-6" />
-              )}
-            </button>
+            <div className="lg:hidden flex items-center gap-3">
+              {/* Mobile Cart Icon */}
+              <Link
+                to="/cart"
+                className="relative p-2 text-white hover:text-amber-300 transition"
+              >
+                <IoCart className="w-6 h-6" />
+                {getTotalItems() > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold">
+                    {getTotalItems()}
+                  </span>
+                )}
+              </Link>
+
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="p-2 text-white"
+              >
+                {mobileMenuOpen ? (
+                  <IoClose className="w-6 h-6" />
+                ) : (
+                  <IoMenu className="w-6 h-6" />
+                )}
+              </button>
+            </div>
           </div>
 
           {/* Mobile Menu */}
