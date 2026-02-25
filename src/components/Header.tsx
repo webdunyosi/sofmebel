@@ -116,18 +116,8 @@ export const Header: React.FC = () => {
                 {language === "uz" ? "Mebel" : "Мебель"}
               </Link>
               {/* Accessories link removed per request */}
-              <a
-                href="#magazine"
-                className="text-white hover:text-amber-300 transition font-medium"
-              >
-                {language === "uz" ? "Online Magazin" : "Онлайн Магазин"}
-              </a>
-              <a
-                href="#about"
-                className="text-white hover:text-amber-300 transition font-medium"
-              >
-                {language === "uz" ? "Biz haqimizda" : "О нас"}
-              </a>
+              {/* Online Magazin link removed */}
+              {/* Biz haqimizda link removed */}
             </div>
 
             {/* Right Section */}
@@ -194,18 +184,8 @@ export const Header: React.FC = () => {
                 {language === "uz" ? "Mebel" : "Мебель"}
               </Link>
               {/* Accessories link removed from mobile menu */}
-              <a
-                href="#magazine"
-                className="block px-4 py-2 text-white hover:bg-red-600 rounded transition"
-              >
-                {language === "uz" ? "Online Magazin" : "Онлайн Магазин"}
-              </a>
-              <a
-                href="#about"
-                className="block px-4 py-2 text-white hover:bg-red-600 rounded transition"
-              >
-                {language === "uz" ? "Biz haqimizda" : "О нас"}
-              </a>
+              {/* Online Magazin link removed from mobile menu */}
+              {/* Biz haqimizda removed from mobile menu */}
               <button className="w-full px-4 py-2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-red-900 rounded-full font-bold hover:shadow-lg hover:scale-105 transition-all duration-300 shadow-md">
                 {language === "uz"
                   ? "Uchrashuvni belgilash"
