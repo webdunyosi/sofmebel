@@ -247,49 +247,100 @@ _SofMebel Website dan yuborildi_
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Video card (opens YouTube in new tab) */}
             <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition group cursor-pointer">
-              <div className="relative h-64 overflow-hidden">
+              <a
+                href="https://www.youtube.com/watch?v=KHG6ylx9J2o"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block relative h-64 overflow-hidden"
+                aria-label="Open Living Room video on YouTube"
+              >
                 <img
                   src="/showroom/1.jpg"
-                  alt="Showroom 1"
+                  alt="Living Room video thumbnail"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent flex items-end">
-                  <div className="p-6 text-white">
-                    <h3 className="text-xl font-bold">
-                      Living Room Collection
-                    </h3>
+                <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="w-8 h-8 text-red-600"
+                    >
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
                   </div>
                 </div>
-              </div>
+                <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/60 to-transparent p-6 text-white">
+                  <h3 className="text-xl font-bold">Living Room Collection</h3>
+                </div>
+              </a>
             </div>
+
+            {/* Bedroom Elegance - YouTube video */}
             <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition group cursor-pointer">
-              <div className="relative h-64 overflow-hidden">
+              <a
+                href="https://www.youtube.com/watch?v=0V6PASSliBk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block relative h-64 overflow-hidden"
+                aria-label="Open Bedroom Elegance video on YouTube"
+              >
                 <img
                   src="/showroom/2.jpg"
-                  alt="Showroom 2"
+                  alt="Bedroom Elegance video thumbnail"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent flex items-end">
-                  <div className="p-6 text-white">
-                    <h3 className="text-xl font-bold">Bedroom Elegance</h3>
+                <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="w-8 h-8 text-red-600"
+                    >
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
                   </div>
                 </div>
-              </div>
+                <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/60 to-transparent p-6 text-white">
+                  <h3 className="text-xl font-bold">Bedroom Elegance</h3>
+                </div>
+              </a>
             </div>
+
+            {/* Office Solutions - YouTube video */}
             <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition group cursor-pointer">
-              <div className="relative h-64 overflow-hidden">
+              <a
+                href="https://www.youtube.com/watch?v=XmByRmE5_P0"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block relative h-64 overflow-hidden"
+                aria-label="Open Office Solutions video on YouTube"
+              >
                 <img
                   src="/showroom/3.jpg"
-                  alt="Showroom 3"
+                  alt="Office Solutions video thumbnail"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent flex items-end">
-                  <div className="p-6 text-white">
-                    <h3 className="text-xl font-bold">Office Solutions</h3>
+                <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="w-8 h-8 text-red-600"
+                    >
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
                   </div>
                 </div>
-              </div>
+                <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/60 to-transparent p-6 text-white">
+                  <h3 className="text-xl font-bold">Office Solutions</h3>
+                </div>
+              </a>
             </div>
           </div>
         </div>
