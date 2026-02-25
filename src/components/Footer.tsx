@@ -13,214 +13,155 @@ import { FaTelegram } from "react-icons/fa"
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-gradient-to-br from-slate-900 via-red-900/20 to-slate-900 text-gray-300 mt-20 relative overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="absolute top-0 right-0 w-72 h-72 bg-red-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
-      <div
-        className="absolute bottom-0 left-0 w-72 h-72 bg-yellow-500/5 rounded-full blur-3xl animate-pulse-slow"
-        style={{ animationDelay: "1s" }}
-      ></div>
+    <footer className="bg-red-900 text-gray-100 relative overflow-hidden">
+      {/* subtle decorative circles */}
+      <div className="absolute -top-20 -right-20 w-80 h-80 bg-red-800/30 rounded-full blur-2xl"></div>
+      <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-black/10 rounded-full blur-2xl"></div>
 
-      {/* Main Footer */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
           <div>
-            <h3 className="text-white text-2xl font-bold mb-4">
-              <span className="text-amber-400">Sof</span>
-              <span>Mebel</span>
+            <h3 className="text-2xl font-bold mb-3">
+              <span className="text-amber-300">Sof</span>
+              <span className="ml-1">Mebel</span>
             </h3>
-            <p className="text-sm text-gray-400 mb-6 leading-relaxed">
-              Sifatli, zamonaviy va mas'uliyatli narxdagi mebellarning eng yirik
-              katalogi.
+            <p className="text-sm text-gray-200 mb-4">
+              Sifatli, zamonaviy mebellar - ishonchli tanlov.
             </p>
-            <div className="space-y-3 text-sm">
-              <a
-                href="tel:+998900000000"
-                className="flex items-center gap-2 text-gray-400 hover:text-amber-400 transition"
-              >
-                <IoCall className="w-4 h-4" />
-                <span>+998 90 000 00 00</span>
+            <div className="space-y-2 text-sm text-gray-200">
+              <a href="tel:+998900000000" className="flex items-center gap-2">
+                <IoCall className="w-4 h-4" /> +998 90 000 00 00
               </a>
               <a
                 href="mailto:info@sofmebel.uz"
-                className="flex items-center gap-2 text-gray-400 hover:text-amber-400 transition"
+                className="flex items-center gap-2"
               >
-                <IoMail className="w-4 h-4" />
-                <span>info@sofmebel.uz</span>
+                <IoMail className="w-4 h-4" /> info@sofmebel.uz
               </a>
-              <div className="flex items-center gap-2 text-gray-400">
-                <IoLocation className="w-4 h-4" />
-                <span>Tashkent, Uzbekistan</span>
+              <div className="flex items-center gap-2">
+                <IoLocation className="w-4 h-4" /> Tashkent, Uzbekistan
               </div>
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
-            <h4 className="text-white text-lg font-bold mb-6">
-              Tezkor havolalar
-            </h4>
-            <ul className="space-y-3 text-sm">
+            <h4 className="font-bold mb-4">Tezkor havolalar</h4>
+            <ul className="space-y-2 text-sm text-gray-200">
               <li>
-                <Link
-                  to="/"
-                  className="text-gray-400 hover:text-amber-400 transition"
-                >
+                <Link to="/" className="hover:underline">
                   Bosh sahifa
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/products"
-                  className="text-gray-400 hover:text-amber-400 transition"
-                >
+                <Link to="/products" className="hover:underline">
                   Mebellar katalogi
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/cart"
-                  className="text-gray-400 hover:text-amber-400 transition"
-                >
+                <Link to="/cart" className="hover:underline">
                   Mening savatcham
                 </Link>
-              </li>
-              <li>
-                <a
-                  href="#contact"
-                  className="text-gray-400 hover:text-amber-400 transition"
-                >
-                  Bog'lanish
-                </a>
               </li>
             </ul>
           </div>
 
-          {/* Categories */}
           <div>
-            <h4 className="text-white text-lg font-bold mb-6">Mahsulotlar</h4>
-            <ul className="space-y-3 text-sm">
+            <h4 className="font-bold mb-4">Mahsulotlar</h4>
+            <ul className="space-y-2 text-sm text-gray-200">
               <li>
-                <a
-                  href="#sofas"
-                  className="text-gray-400 hover:text-amber-400 transition"
-                >
+                <a href="#sofas" className="hover:underline">
                   Divanlar
                 </a>
               </li>
               <li>
-                <a
-                  href="#chairs"
-                  className="text-gray-400 hover:text-amber-400 transition"
-                >
+                <a href="#chairs" className="hover:underline">
                   Kreslo va stullar
                 </a>
               </li>
               <li>
-                <a
-                  href="#tables"
-                  className="text-gray-400 hover:text-amber-400 transition"
-                >
+                <a href="#tables" className="hover:underline">
                   Stollar
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#beds"
-                  className="text-gray-400 hover:text-amber-400 transition"
-                >
-                  Krovatlar
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Social & Payments */}
           <div>
-            <h4 className="text-white text-lg font-bold mb-6">
-              Biz bilan bog'langin
-            </h4>
-            <div className="space-y-4">
-              <div className="flex gap-3">
-                <a
-                  href="#instagram"
-                  className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-amber-400 hover:bg-amber-400 hover:text-slate-900 transition"
-                >
-                  <IoLogoInstagram className="w-5 h-5" />
-                </a>
-                <a
-                  href="#facebook"
-                  className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-amber-400 hover:bg-amber-400 hover:text-slate-900 transition"
-                >
-                  <IoLogoFacebook className="w-5 h-5" />
-                </a>
-                <a
-                  href="#telegram"
-                  className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-amber-400 hover:bg-amber-400 hover:text-slate-900 transition"
-                >
-                  <FaTelegram className="w-5 h-5" />
-                </a>
-              </div>
-              <div className="pt-4 border-t border-gray-700">
-                <p className="text-xs text-gray-500 mb-3">Toʻlov usullari</p>
-                <div className="flex gap-2">
-                  <span className="px-2 py-1 bg-gray-800 rounded text-xs text-gray-400 flex items-center gap-1">
-                    <IoCard className="w-4 h-4" /> Card
-                  </span>
-                  <span className="px-2 py-1 bg-gray-800 rounded text-xs text-gray-400 flex items-center gap-1">
-                    📱 Mobile
-                  </span>
-                  <span className="px-2 py-1 bg-gray-800 rounded text-xs text-gray-400 flex items-center gap-1">
-                    🏦 Bank
-                  </span>
-                </div>
+            <h4 className="font-bold mb-4">Biz bilan bog'laning</h4>
+            <div className="flex gap-3 mb-4">
+              <a
+                href="#instagram"
+                className="w-10 h-10 bg-red-800 rounded-full flex items-center justify-center text-amber-300"
+              >
+                <IoLogoInstagram className="w-5 h-5" />
+              </a>
+              <a
+                href="#facebook"
+                className="w-10 h-10 bg-red-800 rounded-full flex items-center justify-center text-amber-300"
+              >
+                <IoLogoFacebook className="w-5 h-5" />
+              </a>
+              <a
+                href="#telegram"
+                className="w-10 h-10 bg-red-800 rounded-full flex items-center justify-center text-amber-300"
+              >
+                <FaTelegram className="w-5 h-5" />
+              </a>
+            </div>
+            <div className="pt-3 border-t border-red-800">
+              <p className="text-xs text-gray-300 mb-2">Toʻlov usullari</p>
+              <div className="flex gap-2">
+                <span className="px-2 py-1 bg-red-800/60 rounded text-xs">
+                  Card
+                </span>
+                <span className="px-2 py-1 bg-red-800/60 rounded text-xs">
+                  Mobile
+                </span>
+                <span className="px-2 py-1 bg-red-800/60 rounded text-xs">
+                  Bank
+                </span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Newsletter */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 pt-12 border-t border-gray-800">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 pt-12 border-t border-red-800">
           <div>
-            <h4 className="text-white font-bold mb-4">News va taklif</h4>
-            <p className="text-sm text-gray-400 mb-4">
-              Eng birinchi yangi mahsulot va chegirmalar haqida xabar bering
+            <h4 className="font-bold mb-3">News va taklif</h4>
+            <p className="text-sm text-gray-200 mb-4">
+              Yangiliklardan birinchi bo'lib xabardor bo'ling
             </p>
             <div className="flex gap-2">
               <input
                 type="email"
                 placeholder="Email..."
-                className="flex-1 px-4 py-2 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-amber-400 text-sm"
+                className="flex-1 px-4 py-2 rounded-lg bg-red-800/60 text-white focus:outline-none text-sm"
               />
-              <button className="px-4 py-2 bg-amber-400 text-slate-900 rounded-lg font-bold hover:bg-amber-300 transition flex items-center justify-center">
+              <button className="px-4 py-2 bg-amber-400 text-slate-900 rounded-lg font-bold">
                 <IoCheckmarkCircle className="w-5 h-5" />
               </button>
             </div>
           </div>
           <div className="text-right md:text-left">
-            <h4 className="text-white font-bold mb-4">
-              Zamanasiga savoy bo'ling
-            </h4>
-            <p className="text-sm text-gray-400 mb-4">
-              Bizning social tarmoqlarimizda obunaski
+            <h4 className="font-bold mb-3">Zamanasiga savoy bo'ling</h4>
+            <p className="text-sm text-gray-200">
+              Bizning ijtimoiy tarmoqlarda kuzatib boring
             </p>
           </div>
         </div>
       </div>
 
-      {/* Bottom Footer */}
-      <div className="relative z-10 border-t border-gray-800 bg-slate-950/80 backdrop-blur-sm py-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+      <div className="relative z-10 border-t border-red-800 bg-red-950/80 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-300">
           <p>&copy; 2024 SofMebel. Barcha huquqlar himoyalangan.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#privacy" className="hover:text-yellow-400 transition">
+            <a href="#privacy" className="hover:underline">
               Maxfiylik siyosati
             </a>
-            <a href="#terms" className="hover:text-yellow-400 transition">
+            <a href="#terms" className="hover:underline">
               Shartlar
             </a>
-            <a href="#cookies" className="hover:text-yellow-400 transition">
+            <a href="#cookies" className="hover:underline">
               Cookies
             </a>
           </div>
