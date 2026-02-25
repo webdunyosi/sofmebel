@@ -6,7 +6,6 @@ import {
   IoFlash,
   IoStar,
   IoPricetag,
-  IoCall,
   IoCheckmark,
 } from "react-icons/io5"
 

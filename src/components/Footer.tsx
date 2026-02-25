@@ -6,7 +6,6 @@ import {
   IoLocation,
   IoLogoInstagram,
   IoLogoFacebook,
-  IoCard,
   IoCheckmarkCircle,
 } from "react-icons/io5"
 import { FaTelegram } from "react-icons/fa"

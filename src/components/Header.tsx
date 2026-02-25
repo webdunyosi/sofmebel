@@ -6,7 +6,7 @@ import { IoCall, IoMenu, IoClose, IoCart } from "react-icons/io5"
 export const Header: React.FC = () => {
   const { getTotalItems } = useCart()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [language, setLanguage] = useState<"uz" | "ru">("uz")
+  const [language] = useState<"uz" | "ru">("uz")
 
   return (
     <header>
