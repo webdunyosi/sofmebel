@@ -134,10 +134,17 @@ export const Header: React.FC = () => {
               </a>
 
               {/* Schedule Button */}
-              <button className="px-6 py-2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-red-900 rounded-full font-bold hover:shadow-lg hover:scale-105 transition-all duration-300 shadow-md">
+              <button
+                onClick={() => {
+                  const el = document.getElementById("contact")
+                  if (el)
+                    el.scrollIntoView({ behavior: "smooth", block: "start" })
+                }}
+                className="px-6 py-2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-red-900 rounded-full font-bold hover:shadow-lg hover:scale-105 transition-all duration-300 shadow-md"
+              >
                 {language === "uz"
-                  ? "Uchrashuvni belgilash"
-                  : "Записать встречу"}
+                  ? "Biz bilan bog'lanish"
+                  : "Связаться с нами"}
                 <span className="ml-2">→</span>
               </button>
 
@@ -186,10 +193,17 @@ export const Header: React.FC = () => {
               {/* Accessories link removed from mobile menu */}
               {/* Online Magazin link removed from mobile menu */}
               {/* Biz haqimizda removed from mobile menu */}
-              <button className="w-full px-4 py-2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-red-900 rounded-full font-bold hover:shadow-lg hover:scale-105 transition-all duration-300 shadow-md">
+              <button
+                onClick={() => {
+                  const el = document.getElementById("contact")
+                  if (el)
+                    el.scrollIntoView({ behavior: "smooth", block: "start" })
+                }}
+                className="w-full px-4 py-2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-red-900 rounded-full font-bold hover:shadow-lg hover:scale-105 transition-all duration-300 shadow-md"
+              >
                 {language === "uz"
-                  ? "Uchrashuvni belgilash"
-                  : "Записать встречу"}
+                  ? "Biz bilan bog'lanish"
+                  : "Связаться с нами"}
               </button>
             </div>
           )}

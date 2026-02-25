@@ -327,7 +327,10 @@ _SofMebel Website dan yuborildi_
       </section>
 
       {/* Newsletter Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-red-700 via-red-800 to-red-900 text-white py-20">
+      <section
+        id="contact"
+        className="relative overflow-hidden bg-gradient-to-br from-red-700 via-red-800 to-red-900 text-white py-20"
+      >
         {/* Animated Background */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-yellow-500/20 rounded-full blur-3xl animate-pulse-slow"></div>
         <div
